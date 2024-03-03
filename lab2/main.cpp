@@ -22,15 +22,10 @@ int main()
   monty.debug();
 
   /// the output ('name' is in the html form that started this)
-  cout << "Welcome, " << monty.getField("name") << "!";
-  cout << "Welcome again, " << monty.getField("name") << "!";
-  cout << "Welcome once more, " << monty.getField("name") << "!";
-
+  cout << "Boo, " << monty.getField("name") << "!";
 
   /// access another field ('color' is in the html form)
   cout << "Your favorite color is " << monty.getField("color") << "!";
-  cout << "The airspeed is " << monty.getField("airspeed") << " mph. ";
-
  
   return 0;
 }
