@@ -4,10 +4,6 @@
 CXX = g++
 #CXXFLAGS = -Wall -Werror -std=c++11
 
-# Output files
-OUT_MAIN = runme.cgi
-OUT_UTILS = libutils.a
-
 # Default target
 all: runme.cgi publish
 
@@ -15,7 +11,10 @@ runme.cgi: main.cpp htmlform.cpp
 	$(CXX) *.cpp -o $@
 
 publish:
-	echo "Hi from Publish"
+	if test -d ~/public_html; then \
+	  mkdir -p ~/public_html/lab2; \
+		cp -f --remove-destination *.html *.cgi ~/public_html/lab2; \
+	fi
 
 clean:
 	rm *.cgi
